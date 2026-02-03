@@ -23,6 +23,15 @@
 // Only one screen should be active at a time.
 let currentScreen = "start"; // "start" | "instr" | "game" | "win" | "lose"
 
+let dragonImg, moonwaterImg, goblinImg, flowerImg, honeyImg;
+
+function preload() {
+  dragonImg = loadImage("assets/images/dragonscale.png");
+  moonwaterImg = loadImage("assets/images/moonwater.png");
+  goblinImg = loadImage("assets/images/goblinhair.png");
+  rainbowImg = loadImage("assets/images/rainbowflower.png");
+  honeyImg = loadImage("assets/images/honeydrop.png");
+}
 // ------------------------------
 // setup() runs ONCE at the beginning
 // ------------------------------
@@ -32,7 +41,7 @@ function setup() {
 
   // Sets a default font for all text() calls
   // (This can be changed later per-screen if you want.)
-  textFont("sans-serif");
+  textFont("Monospace");
 }
 
 // ------------------------------
@@ -51,8 +60,10 @@ function draw() {
   if (currentScreen === "start") drawStart();
   else if (currentScreen === "instr") drawInstr();
   else if (currentScreen === "game") drawGame();
-  else if (currentScreen === "win") drawWin();
-  else if (currentScreen === "lose") drawLose();
+  else if (currentScreen === "addon") drawAddon();
+  else if (currentScreen === "endCure") drawEndCure();
+  else if (currentScreen === "endChaotic") drawEndChaotic();
+  else if (currentScreen === "endSilly") drawEndSilly();
 
   // (Optional teaching note)
   // This “if/else chain” is a very common early approach.
@@ -72,14 +83,24 @@ function mousePressed() {
   // game.js          → gameMousePressed()
   // win.js           → winMousePressed()
   // lose.js          → loseMousePressed()
+  if (
+    currentScreen === "endCure" ||
+    currentScreen === "endChaotic" ||
+    currentScreen === "endSilly"
+  ) {
+    resetGame();
+    return; // exit so we don't trigger other mouse logic
+  }
 
   if (currentScreen === "start") startMousePressed();
   else if (currentScreen === "instr") instrMousePressed();
   else if (currentScreen === "game") gameMousePressed();
+  else if (currentScreen === "addon") addonMousePressed();
   // The ?.() means “call this function only if it exists”
   // This prevents errors if a screen doesn’t implement a handler.
-  else if (currentScreen === "win") winMousePressed?.();
-  else if (currentScreen === "lose") loseMousePressed?.();
+  else if (currentScreen === "endCure") endCureMousePressed();
+  else if (currentScreen === "endChaotic") endChaoticMousePressed();
+  else if (currentScreen === "endSilly") endSillyMousePressed();
 }
 
 // ------------------------------
@@ -93,12 +114,19 @@ function keyPressed() {
   // game.js          → gameKeyPressed()
   // win.js           → winKeyPressed()
   // lose.js          → loseKeyPressed()
+  if (
+    (currentScreen === "endCure" ||
+      currentScreen === "endChaotic" ||
+      currentScreen === "endSilly") &&
+    (key === "r" || key === "R")
+  ) {
+    resetGame();
+    return;
+  }
 
   if (currentScreen === "start") startKeyPressed();
   else if (currentScreen === "instr") instrKeyPressed();
-  else if (currentScreen === "game") gameKeyPressed?.();
-  else if (currentScreen === "win") winKeyPressed?.();
-  else if (currentScreen === "lose") loseKeyPressed?.();
+  else if (currentScreen === "game") gameKeyPressed();
 }
 
 // ------------------------------------------------------------
@@ -121,4 +149,8 @@ function isHover({ x, y, w, h }) {
     mouseY > y - h / 2 && // mouse is below top edge
     mouseY < y + h / 2 // mouse is above bottom edge
   );
+}
+
+function resetGame() {
+  currentScreen = "start";
 }

@@ -1,18 +1,18 @@
 ## Project Title
 
-GBDA302 Week 3 Example 1: Instructions Screen with Back button
+GBDA302 SideQuest W3: Potions Mix-Up
 
 ---
 
 ## Authors
 
-Karen Cochrane and David Han
+Changes made by Lisa, Original by Karen Cochrane and David Han
 
 ---
 
 ## Description
 
-This p5.js project demonstrates a simple multi-screen game structure using a state-based approach. The example includes a start screen, an instructions screen with a back button, a basic game screen, and win/lose outcome screens. The focus is on showing how to separate screens into different files, route input based on the current game state, and design simple UI elements such as buttons and keyboard controls.
+The sidequest prompt was to create an interactive game branching like a decision tree. This is a potion game where the player must find the cure by picking the correct base ingredient and add-on ingredient to get the good ending. There are multiple endings based on combinations the user picks and calls multiple screens. Users can then return to the start and try other endings.
 
 ---
 
@@ -28,12 +28,16 @@ This p5.js project demonstrates a simple multi-screen game structure using a sta
 
 ## Assets
 
-N/A
+Generated Pixelated Art of ingredients.
+
+- Dragon scale
+- goblin hair
+- honey drop
+- moon water
+- rainbow flower
 
 ---
 
 ## GenAI
 
-The code was written by Dr. Karen Cochrane but she used GenAI to write the comments.
-
----
+## GenAI was used by Lisa to help debug code and providing explanations
