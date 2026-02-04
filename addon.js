@@ -82,7 +82,6 @@ function addonMousePressed() {
 // Button drawing helper
 // ------------------------------
 // This function is responsible *only* for drawing the button.
-// It does NOT handle clicks or game logic.
 
 function drawGameButtons(buttons) {
   rectMode(CENTER);

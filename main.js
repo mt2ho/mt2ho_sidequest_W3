@@ -40,7 +40,6 @@ function setup() {
   createCanvas(800, 800);
 
   // Sets a default font for all text() calls
-  // (This can be changed later per-screen if you want.)
   textFont("Monospace");
 }
 

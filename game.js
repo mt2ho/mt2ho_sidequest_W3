@@ -9,9 +9,7 @@
 // Button data
 // ------------------------------
 // This object stores all the information needed to draw
-// and interact with the button on the game screen.
-// Keeping this in one object makes it easier to move,
-// resize, or restyle the button later.
+// and interact with the buttons on the game screen.
 
 let baseButtons = [
   { name: "Dragon Scale", x: 200, y: 420, w: 180, h: 60 },
