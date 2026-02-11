@@ -31,7 +31,7 @@ The sidequest prompt was to create an interactive game branching like a decision
 Generated Pixelated Art of ingredients.
 
 - Dragon scale
-- goblin hair
+- goblin hai
 - honey drop
 - moon water
 - rainbow flower

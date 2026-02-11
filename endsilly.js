@@ -1,11 +1,11 @@
 function drawEndSilly() {
-  // Green-tinted background to communicate success
+  // yellow-tinted background to communicate success
   background(255, 219, 88);
 
   fill(0);
   textAlign(CENTER, CENTER);
 
-  // Main success message
+  // Main silly end message
   textSize(24);
   text(
     "You have been turned into a fluffy creature!\n Could've been worse.",
@@ -19,7 +19,7 @@ function drawEndSilly() {
 }
 
 // ------------------------------------------------------------
-// Mouse input for win screen
+// Mouse input for silly end screen
 // ------------------------------------------------------------
 // Any mouse click returns the player to the start screen
 function EndCureMousePressed() {
@@ -27,7 +27,7 @@ function EndCureMousePressed() {
 }
 
 // ------------------------------------------------------------
-// Keyboard input for win screen
+// Keyboard input for silly end screen
 // ------------------------------------------------------------
 // R is commonly used for “restart” in games
 function endCureKeyPressed() {

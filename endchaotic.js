@@ -1,5 +1,5 @@
 function drawEndChaotic() {
-  // Green-tinted background to communicate success
+  // red-tinted background to communicate failure
   background(238, 75, 43);
 
   fill(0);
@@ -19,7 +19,7 @@ function drawEndChaotic() {
 }
 
 // ------------------------------------------------------------
-// Mouse input for win screen
+// Mouse input for chaotic end screen
 // ------------------------------------------------------------
 // Any mouse click returns the player to the start screen
 function EndCureMousePressed() {
@@ -27,7 +27,7 @@ function EndCureMousePressed() {
 }
 
 // ------------------------------------------------------------
-// Keyboard input for win screen
+// Keyboard input for chaotic end screen
 // ------------------------------------------------------------
 // R is commonly used for “restart” in games
 function endCureKeyPressed() {
